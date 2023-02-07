@@ -26,7 +26,7 @@ metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x)
 names(metadata) <- sheets
 
 abstract_docx <- "data-raw/metadata/abstract.docx"
-methods_docx <- "data-raw/metadata/methods.docx"
+methods_docx <- "data-raw/metadata/methods.md" # original, bulleted methods are in the .docx file
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("EDI_USER_ID"), password = Sys.getenv("EDI_PASSWORD"))
 # edi_number <- fill in with reserved edi number
 
