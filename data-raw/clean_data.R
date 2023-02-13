@@ -1,8 +1,10 @@
 library(tidyverse)
 library(readxl)
+# TODO get lat/long for project-level metadata
 
 # catch
 # TODO atCaptureRun vs. finalRun? Looks like they moved many "not recorded" to NAs and got rid of Winter
+# TODO outlier (9069 in totalLength)
 catch_raw <- read_xlsx(here::here("data-raw", "LFR_Catch_Raw.xlsx")) |>
   select(-actualCount) |> # all are "yes"
   glimpse()
@@ -44,3 +46,8 @@ release_fish_raw <- read_xlsx(here::here("data-raw", "LFR_ReleaseFish_Raw.xlsx")
   glimpse()
 
 
+# read in clean data to double check --------------------------------------
+catch <- read_csv(here::here("data", "catch.csv")) |> glimpse()
+trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
+recaptures <- read_csv(here::here("data", "recaptures.csv")) |> glimpse()
+release <- read_csv(here::here("data", "release.csv")) |> glimpse()
