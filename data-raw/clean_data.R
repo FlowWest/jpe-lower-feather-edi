@@ -20,14 +20,13 @@ recaptures_raw <- read_xlsx(here::here("data-raw", "LFR_Recaptures_Raw.xlsx")) |
   mutate(forkLength = as.numeric(forkLength),
          totalLength = as.numeric(totalLength),
          markCode = as.character(markCode)) |>
+  select(-c(lifeStage, mort, forkLength, totalLength, actualCountID,
+            markCode)) |>
   glimpse()
 write_csv(recaptures_raw, here::here("data", "recaptures.csv"))
 
 # releases
 release_raw <- read_xlsx(here::here("data-raw", "LFR_Release_Raw.xlsx")) |>
-  mutate(markedLifeStage = as.character(markedLifeStage),
-         sourceOfFishSite = as.character(sourceOfFishSite),
-         appliedMarkCode = as.character(appliedMarkCode)) |>
   glimpse()
 write_csv(release_raw, here::here("data", "release.csv"))
 
