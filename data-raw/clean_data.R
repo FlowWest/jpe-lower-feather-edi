@@ -40,3 +40,32 @@ catch <- read_csv(here::here("data", "catch.csv")) |> glimpse()
 trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
 recaptures <- read_csv(here::here("data", "recaptures.csv")) |> glimpse()
 release <- read_csv(here::here("data", "release.csv")) |> glimpse()
+
+# function for checking metadata ------------------------------------------
+get_class <- function(data, name) {
+  data |> select(all_of(name)) |>
+    pull() |> class()
+}
+report_metadata <- function(data) {
+  names <- names(data)
+  for(i in names) {
+    print(i)
+    if(get_class(data, i)[1] == "character") {
+      values <- data |> select(all_of(i)) |> pull()
+      dput(unique(values))
+    }
+    else if(get_class(data, i)[1] == "numeric") {
+      print(data |> select(all_of(i)) |> pull() |> range(na.rm = T))
+    }
+    else if(get_class(data, i)[1] == "POSIXct") {
+      print(data |> select(all_of(i)) |> pull() |> range(na.rm = T))
+    }
+    else if (get_class(data, i)[1] == "logical") {
+      print(data |> select(all_of(i)) |> pull() |> unique())
+    }
+    else{
+      print("unknown data type")
+    }
+  }
+}
+
