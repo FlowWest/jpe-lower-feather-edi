@@ -101,10 +101,10 @@
       <geographicCoverage>
         <geographicDescription>Lower Feather River Rotary Screw Trap</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-121.5813</westBoundingCoordinate>
-          <eastBoundingCoordinate>-121.5813</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.0022</northBoundingCoordinate>
-          <southBoundingCoordinate>39.0022</southBoundingCoordinate>
+          <westBoundingCoordinate>-121.6197</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.5545</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.0555</northBoundingCoordinate>
+          <southBoundingCoordinate>38.9658</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
