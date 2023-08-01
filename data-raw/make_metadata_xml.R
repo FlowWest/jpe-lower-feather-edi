@@ -64,13 +64,14 @@ custom_units <- data.frame(id = c("number of rotations", "NTU", "revolutions per
 
 
 unitList <- EML::set_unitList(custom_units)
-
+edi_number <- "lower_feather"# for now
 eml <- list(packageId = edi_number,
             system = "EDI",
             access = add_access(),
             dataset = dataset,
             additionalMetadata = list(metadata = list(unitList = unitList))
 )
+
 edi_number
 EML::write_eml(eml, paste0(edi_number, ".xml"))
 EML::eml_validate(paste0(edi_number, ".xml"))
