@@ -23,7 +23,7 @@ recaptures_raw <- read_xlsx(here::here("data-raw", "LFR_Recaptures_Raw.xlsx")) |
   select(-c(lifeStage, mort, forkLength, totalLength, actualCountID,
             markCode)) |>
   glimpse()
-write_csv(recaptures_raw, here::here("data", "recaptures.csv"))
+write_csv(recaptures_raw, here::here("data", "recapture.csv"))
 
 # releases
 release_raw <- read_xlsx(here::here("data-raw", "LFR_Release_Raw.xlsx")) |>
@@ -38,5 +38,5 @@ release_fish_raw <- read_xlsx(here::here("data-raw", "LFR_ReleaseFish_Raw.xlsx")
 # read in clean data to double check --------------------------------------
 catch <- read_csv(here::here("data", "catch.csv")) |> glimpse()
 trap <- read_csv(here::here("data", "trap.csv")) |> glimpse()
-recaptures <- read_csv(here::here("data", "recaptures.csv")) |> glimpse()
+recapture <- read_csv(here::here("data", "recapture.csv")) |> glimpse()
 release <- read_csv(here::here("data", "release.csv")) |> glimpse()

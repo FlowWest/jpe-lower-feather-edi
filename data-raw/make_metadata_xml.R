@@ -8,7 +8,7 @@ library(EMLaide)
 datatable_metadata <-
   dplyr::tibble(filepath = c("data/catch.csv",
                              "data/trap.csv",
-                             "data/recaptures.csv",
+                             "data/recapture.csv",
                              "data/release.csv"),
                 attribute_info = c("data-raw/metadata/lower_feather_catch_metadata.xlsx",
                                    "data-raw/metadata/lower_feather_trap_metadata.xlsx",
@@ -21,7 +21,7 @@ datatable_metadata <-
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-lower-feather-edi/main/data/",
                                        c("catch.csv",
                                          "trap.csv",
-                                         "recaptures.csv",
+                                         "recapture.csv",
                                          "release.csv")))
 
 excel_path <- "data-raw/metadata/lower_feather_metadata.xlsx"
