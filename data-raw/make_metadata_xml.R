@@ -33,7 +33,8 @@ abstract_docx <- "data-raw/metadata/abstract.docx"
 methods_docx <- "data-raw/metadata/methods.md" # original, bulleted methods are in the .docx file
 
 #edi_number <- reserve_edi_id(user_id = Sys.getenv("edi_user_id"), password = Sys.getenv("edi_password"))
-edi_number <- "edi.1500.1" # reserved 9-20-2023 under srjpe account
+# edi_number <- "edi.1500.1" # reserved 9-20-2023 under srjpe account
+edi_number <- "edi.1500.2" # update ?
 
 dataset <- list() %>%
   add_pub_date() %>%
