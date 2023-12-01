@@ -6,10 +6,10 @@ library(EML)
 library(EMLaide)
 
 datatable_metadata <-
-  dplyr::tibble(filepath = c("data/catch.csv",
-                             "data/trap.csv",
-                             "data/recapture.csv",
-                             "data/release.csv"),
+  dplyr::tibble(filepath = c("data/lower_feather_catch.csv",
+                             "data/lower_feather_trap.csv",
+                             "data/lower_feather_recapture.csv",
+                             "data/lower_feather_release.csv"),
                 attribute_info = c("data-raw/metadata/lower_feather_catch_metadata.xlsx",
                                    "data-raw/metadata/lower_feather_trap_metadata.xlsx",
                                    "data-raw/metadata/lower_feather_recapture_metadata.xlsx",
@@ -19,10 +19,10 @@ datatable_metadata <-
                                           "Recaptured fish",
                                           "Released fish"),
                 datatable_url = paste0("https://raw.githubusercontent.com/SRJPE/jpe-lower-feather-edi/main/data/",
-                                       c("catch.csv",
-                                         "trap.csv",
-                                         "recapture.csv",
-                                         "release.csv")))
+                                       c("lower_feather_catch.csv",
+                                         "lower_feather_trap.csv",
+                                         "lower_feather_recapture.csv",
+                                         "lower_feather_release.csv")))
 
 excel_path <- "data-raw/metadata/lower_feather_metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
