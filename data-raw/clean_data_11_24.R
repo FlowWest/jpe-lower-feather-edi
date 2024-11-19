@@ -31,11 +31,11 @@ write_csv(release_raw, here::here("data", "lower_feather_release.csv"))
 # releasefish
 release_fish_raw <- read_xlsx(here::here("data-raw", "LFR RST ReleaseFish EDI Query.v.11.15.24.xlsx")) |> # note that all forklength values are empty
   glimpse()
-write_csv(release_fish_raw, here::here("data", "lower_feather_release.csv"))
+write_csv(release_fish_raw, here::here("data", "lower_feather_release_fish.csv"))
 
 # read in clean data to double check --------------------------------------
-# catch <- read_csv(here::here("data", "lower_feather_catch.csv")) |> glimpse()
-# trap <- read_csv(here::here("data", "lower_feather_trap.csv")) |> glimpse()
-# recapture <- read_csv(here::here("data", "lower_feather_recapture.csv")) |> glimpse()
-# release <- read_csv(here::here("data", "lower_feather_release.csv")) |> glimpse()
-# release_fish <- read_csv(here::here("data", "lower_feather_release_fish.csv")) |> glimpse()
+catch <- read_csv(here::here("data", "lower_feather_catch.csv")) |> glimpse()
+trap <- read_csv(here::here("data", "lower_feather_trap.csv")) |> glimpse()
+recapture <- read_csv(here::here("data", "lower_feather_recapture.csv")) |> glimpse()
+release <- read_csv(here::here("data", "lower_feather_release.csv")) |> glimpse()
+release_fish <- read_csv(here::here("data", "lower_feather_release_fish.csv")) |> glimpse()
