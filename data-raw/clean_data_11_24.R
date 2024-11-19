@@ -18,7 +18,7 @@ trap_raw <- read_xlsx(here::here("data-raw", "LFR RST Trap Visit EDI Query.v.11.
 # write_csv(trap_raw, here::here("data", "lower_feather_trap.csv"))
 
 # recaptures
-recaptures_raw <- read_xlsx(here::here("data-raw", "LFR RST Recapture EDI Query.v.11.15.24.xlsx")) |>
+recaptures_raw <- read_xlsx(here::here("data-raw", "LFR RST Recapture EDI Query.v.11.15.24.xlsx")) |> # note that there are 11 na values for finalRun
   glimpse()
 # write_csv(recaptures_raw, here::here("data", "lower_feather_recapture.csv"))
 
@@ -28,12 +28,12 @@ release_raw <- read_xlsx(here::here("data-raw", "LFR RST Release EDI Query.v.11.
 # write_csv(release_raw, here::here("data", "lower_feather_release.csv"))
 
 # releasefish - empty
-release_fish_raw <- read_xlsx(here::here("data-raw", "LFR RST ReleaseFish EDI Query.v.11.15.24.xlsx")) |>
+release_fish_raw <- read_xlsx(here::here("data-raw", "LFR RST ReleaseFish EDI Query.v.11.15.24.xlsx")) |> # note that all forklength values are empty
   glimpse()
 
 
 # read in clean data to double check --------------------------------------
-catch <- read_csv(here::here("data", "lower_feather_catch.csv")) |> glimpse()
-trap <- read_csv(here::here("data", "lower_feather_trap.csv")) |> glimpse()
-recapture <- read_csv(here::here("data", "lower_feather_recapture.csv")) |> glimpse()
-release <- read_csv(here::here("data", "lower_feather_release.csv")) |> glimpse()
+# catch <- read_csv(here::here("data", "lower_feather_catch.csv")) |> glimpse()
+# trap <- read_csv(here::here("data", "lower_feather_trap.csv")) |> glimpse()
+# recapture <- read_csv(here::here("data", "lower_feather_recapture.csv")) |> glimpse()
+# release <- read_csv(here::here("data", "lower_feather_release.csv")) |> glimpse()
