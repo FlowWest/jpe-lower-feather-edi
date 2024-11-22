@@ -5,14 +5,14 @@ library(readxl)
 # All additional processing will happen when we pull in data to database.
 
 # TODO - check if above notes are still accurate
-# catch
+# catch  #TODO checked with Claire on why visitTime2 was not added, waiting for answer
 catch_raw <- read_xlsx(here::here("data-raw", "LFR RST Catch Raw EDI Query.v.11.15.24.xlsx")) |>
   select(-actualCount) |> # should we delete this row, as in original clean_data?
   glimpse()
 
 write_csv(catch_raw, here::here("data", "lower_feather_catch.csv"))
 
-# trap
+# trap - #TODO checked with Claire on why visitTime2 was not added, waiting for answer
 trap_raw <- read_xlsx(here::here("data-raw", "LFR RST Trap Visit EDI Query.v.11.15.24.xlsx")) |>
   mutate(waterTempUnit = if_else(waterTempUnit == "°C", "Celsius", "Fahrenheit")) |> # is this code not necessary?
   glimpse()
