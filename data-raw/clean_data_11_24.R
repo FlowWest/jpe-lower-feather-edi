@@ -20,7 +20,12 @@ write_csv(trap_raw, here::here("data", "lower_feather_trap.csv"))
 
 # recaptures
 recaptures_raw <- read_xlsx(here::here("data-raw", "LFR RST Recapture EDI Query.v.11.15.24.xlsx")) |> # note that there are 11 na values for finalRun
+  mutate(trap_start_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ lag(visitTime2),
+                                             T ~ visitTime)),
+         trap_end_date = ymd_hms(case_when(visitType %in% c("Continue trapping", "Unplanned restart", "End trapping") ~ visitTime,
+                                           T ~ visitTime2))) |>
   glimpse()
+
 write_csv(recaptures_raw, here::here("data", "lower_feather_recapture.csv"))
 
 # releases
